@@ -36,12 +36,13 @@ In this, the final model has the transmission type, number of carburetors, and d
 
 ## Figure 1: mpg comparision with respect to displacement.
 ```{r}
-library(ggplot2)
-ggplot(mtcars, aes(x=disp, y=mpg, group=am, color=am)) + geom_point()
+plot(mpg ~ disp, mtcars, col=am, xlab = 'Displacement')
+legend('topright', lty=c(1,1), col=1:2, legend = c('Automatic', 'Manual'))
 ```
 
 ## Figure 2: mpg comparision with respect to number of carburetors.
 ```{r}
-ggplot(mtcars, aes(x=carb, y=mpg, group=am, color=am)) + geom_point()
+plot(mpg ~ carb, mtcars, col=am)
+legend('topright', lty=c(1,1), col=1:2, legend = c('Automatic', 'Manual'))
 ```
 
