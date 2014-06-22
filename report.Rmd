@@ -42,7 +42,7 @@ We can see that these are also very influential, and should be included in the m
 summary(model2)$coefficients
 ```
 
-In this model with the vehicle weight added we see a high p-value for the manual transmission term. This would indicate that multicollinearity exists. Vehicle weight is correlated to both the transmission type and fuel efficiency. 
+In this model with the vehicle weight added we see a high p-value for the manual transmission term. This would indicate that multicollinearity exists. Vehicle weight is correlated to both the transmission type and fuel efficiency. Also see figure 1 in the appendix for a plot of this relationship.
 
 # Residual Analysis
 
@@ -64,6 +64,7 @@ qqline(rstudent(model3))
 ## Figure 1: mpg comparision with respect to weight.
 ```{r}
 plot(mpg ~ wt, mtcars, col=am, xlab = 'Vehicle Weight')
+abline(lm(mpg ~ wt, mtcars))
 legend('topright', lty=c(1,1), col=1:2, legend = c('Automatic', 'Manual'))
 ```
 
